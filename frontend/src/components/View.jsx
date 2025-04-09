@@ -11,7 +11,8 @@ const View = ({ refreshTrigger }) => {
 
     const viewData = async () => {
         try {
-            const res = await axios.get("http://localhost:9000/users");
+            const res = await axios.get("${import.meta.env.VITE_API_URL}
+/users");
             if (Array.isArray(res.data)) {
                 setUsers(res.data);
             } else {
